@@ -1,6 +1,6 @@
 package com.jinfour.samples;
 
-import java.util.Arrays;
+import java.util.LinkedList;
 
 public class Interview_07 {
 
@@ -50,6 +50,8 @@ public class Interview_07 {
             }
         }
         return root;
+
+
     }
 
     public static void main(String[] args){
@@ -58,6 +60,8 @@ public class Interview_07 {
         //int[] node = Arrays.copyOfRange(preorder, 0, 1);
         TreeNode node = new Interview_07().reConstructBinaryTree(preorder, inorder);
         System.out.println(node);
+
+        LinkedList list = new LinkedList();
     }
 
 }

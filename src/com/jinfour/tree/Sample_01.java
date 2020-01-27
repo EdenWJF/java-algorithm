@@ -91,37 +91,4 @@ public class Sample_01 {
         }
     }
 
-    static class NodeMap {
-        private Integer id;
-
-        private String info;
-
-        private List<Node> children;
-
-        public Integer getId() {
-            return id;
-        }
-
-        public void setId(Integer id) {
-            this.id = id;
-        }
-
-        public List<Node> getChildren() {
-            return children;
-        }
-
-        public void setChildren(List<Node> children) {
-            this.children = children;
-        }
-
-        public String getInfo() {
-            return info;
-        }
-
-        public void setInfo(String info) {
-            this.info = info;
-        }
-    }
-
-
 }

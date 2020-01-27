@@ -3,10 +3,10 @@ package com.jinfour.samples;
 public class Interview_04 {
 
     final static int[][] matrix = new int[][]{
-            {1, 2, 8, 9},  //a
-            {2, 4, 9, 12},  //b
-            {4, 7, 10, 13},   //c
-            {6, 8, 11, 15},  //d
+            {1, 2, 8, 9},       //a
+            {2, 4, 9, 12},      //b
+            {4, 7, 10, 13},     //c
+            {6, 8, 11, 15},     //d
     };
 
     //在递增二维数组中找指定的整数

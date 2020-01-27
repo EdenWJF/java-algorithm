@@ -1,4 +1,4 @@
-package com.jinfour.prob;
+package com.jinfour.beautiful;
 
 public class KmpSample {
 
