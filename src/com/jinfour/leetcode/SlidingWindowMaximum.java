@@ -1,4 +1,4 @@
-package com.jinfour.beautiful;
+package com.jinfour.leetcode;
 
 import java.util.LinkedList;
 

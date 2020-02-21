@@ -1,7 +1,17 @@
 package com.jinfour.beautiful;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.Stack;
+
 public class Queen8 {
 
+    /**
+     *
+     * 八皇后
+     *
+     */
 
     static int MAX = 8;
     int[] ans = new int[MAX];
@@ -49,5 +59,21 @@ public class Queen8 {
             System.out.print(ans[i] + " ");
         }
         System.out.println("");
+    }
+
+    //迭代版
+    void placeQueens(int N) {
+        Stack<Integer> solution = new Stack<>();
+        int x = 0, y = 0;
+
+        while (x >= 0 || y < N) {
+            if (solution.size() >= N || y >= N) {
+                Integer pop = solution.pop();
+                y = pop + 1;
+            }else {
+
+
+            }
+        }
     }
 }

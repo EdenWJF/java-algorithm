@@ -7,7 +7,7 @@ import java.lang.invoke.MethodHandle;
 import java.util.Random;
 import java.util.concurrent.ConcurrentSkipListMap;
 
-public class SkipSmaple {
+public class SkipSample {
 
     //跳跃表，concurrentSkipList
 

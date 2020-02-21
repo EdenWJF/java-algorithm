@@ -5,6 +5,9 @@ import java.util.Random;
 public class RandomArray {
 
     /**
+     *
+     * 洗牌算法
+     *
      * 随机指定范围内N个不重复的数
      * 在初始化的无重复待选数组中随机产生一个数放入结果中，
      * 将待选数组被随机到的数，用待选数组(len-1)下标对应的数替换
