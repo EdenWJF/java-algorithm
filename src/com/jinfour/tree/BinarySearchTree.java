@@ -14,13 +14,20 @@ public class BinarySearchTree {
      *      任意节点的左，右子树也分别为二叉搜索树；
      *      没有键值相等的节点。
      */
-    static class Node { // 节点类
+     static class Node { // 节点类
         int data; // 数据域
+        int height;//AVL使用
         Node right; // 右子树
         Node left; // 左子树
 
         public Node(int n) {
             this.data = n;
+        }
+
+        boolean isBalanced() {
+            int leftHeight = left == null ? -1 : left.height;
+            int rightHeight = right == null ? -1 : right.height;
+            return Math.abs(leftHeight - rightHeight) <= 1;
         }
 
         public int getData() {
@@ -30,11 +37,19 @@ public class BinarySearchTree {
         public void setData(int data) {
             this.data = data;
         }
+
+        public int getHeight() {
+            return height;
+        }
+
+        public void setHeight(int height) {
+            this.height = height;
+        }
     }
 
 
 
-    private Node root; // 树根节点
+    Node root; // 树根节点
 
     BinarySearchTree() {
 
@@ -57,30 +72,36 @@ public class BinarySearchTree {
     }
 
     public void insert(int e) {
+        root = insert0(root, e);
+    }
+
+    public Node insert0(Node node, int e) {
+//        System.out.println("in BST");
         Node p = new Node(e);
-        if (root == null) {
-            root = p;
+        if (node == null) {
+            node = p;
         }else {
-            Node parent = root;
+            Node parent = node;
             for (;;) {
-                if (parent.data == e) return;
+                if (parent.data == e) return null;
                 if (parent.data < e) {
                     if (parent.right == null) {
                         parent.right = p;
-                        return;
+                        return node;
                     }else {
                         parent = parent.right;
                     }
                 }else {
                     if (parent.left == null) {
                         parent.left = p;
-                        return;
+                        return node;
                     }else {
                         parent = parent.left;
                     }
                 }
             }
         }
+        return node;
     }
 
     /**
@@ -187,7 +208,7 @@ public class BinarySearchTree {
 
 
     //查询后继节点
-    private Node getSuccessor(Node e) {
+    protected Node getSuccessor(Node e) {
         if (e == null) return null;
 
         Node current = e;
