@@ -5,13 +5,14 @@ import org.junit.Test;
 
 import java.lang.invoke.MethodHandle;
 import java.util.Random;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 public class SkipSample {
 
     //跳跃表，concurrentSkipList
 
-    ConcurrentSkipListMap<Long, String> skipListMap = new ConcurrentSkipListMap();
+    ConcurrentSkipListMap<Long, String> skipListMap = new ConcurrentSkipListMap<>();
 
     @Before
     public void init() {
@@ -20,7 +21,6 @@ public class SkipSample {
         for(int i = 0; i < 10000000; i++) {
             skipListMap.put(random.nextLong(), "222");
         }
-
 
     }
 

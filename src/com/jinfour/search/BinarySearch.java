@@ -12,22 +12,17 @@ public class BinarySearch {
     static int binarySearch(int[] source, int target) {
         int low = 0;
         int high = source.length;
-
         while(low <= high) {
             int middle = (low + high)/2;
-
             if (target == source[middle]) {
                 return middle;
             }
-
             if (target > source[middle]) {
                 low = middle + 1;
             }
-
             if (target < source[middle]) {
                 high = middle - 1;
             }
-
         }
 
         return -1;

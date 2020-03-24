@@ -1,6 +1,4 @@
-package com.jinfour.graph;
-
-import com.jinfour.graph.GraphNode;
+package com.jinfour._graph;
 
 import java.util.LinkedList;
 import java.util.List;

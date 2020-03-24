@@ -61,19 +61,4 @@ public class Queen8 {
         System.out.println("");
     }
 
-    //迭代版
-    void placeQueens(int N) {
-        Stack<Integer> solution = new Stack<>();
-        int x = 0, y = 0;
-
-        while (x >= 0 || y < N) {
-            if (solution.size() >= N || y >= N) {
-                Integer pop = solution.pop();
-                y = pop + 1;
-            }else {
-
-
-            }
-        }
-    }
 }

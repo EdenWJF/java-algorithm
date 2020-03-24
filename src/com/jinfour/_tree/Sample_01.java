@@ -1,4 +1,4 @@
-package com.jinfour.tree;
+package com.jinfour._tree;
 
 import java.util.*;
 import java.util.function.Function;

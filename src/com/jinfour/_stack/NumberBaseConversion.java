@@ -1,4 +1,4 @@
-package com.jinfour.stackandqueue;
+package com.jinfour._stack;
 
 import java.util.Iterator;
 import java.util.Stack;
@@ -18,19 +18,13 @@ public class NumberBaseConversion {
 
     public static void main(String[] args){
         int n = 12345;
-
         Stack s = new Stack();
-
         convert(s, n, 8);
-
         String res = "";
-
         Iterator iterator = s.iterator();
-
         while (iterator.hasNext()) {
             res = res + s.pop();
         }
-
         System.out.println(res);
     }
 }

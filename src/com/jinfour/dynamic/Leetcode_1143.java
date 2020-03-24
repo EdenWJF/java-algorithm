@@ -13,7 +13,7 @@ public class Leetcode_1143 {
      * 若这两个字符串没有公共子序列，则返回 0。
      */
 
-    public int method1(String s1, String s2) {
+    public static int method(String s1, String s2) {
         int[][] dp = new int[s1.length() + 1][s2.length() + 1];
         for (int i = 0; i < s1.length(); ++i)
             for (int j = 0; j < s2.length(); ++j)
@@ -22,18 +22,10 @@ public class Leetcode_1143 {
         return dp[s1.length()][s2.length()];
     }
 
-    public int method2(String s1, String s2) {
-        int m = s1.length(), n = s2.length();
-        if (m < n)  return method2(s2, s1);
-        int[][] dp = new int[2][n + 1];
-        for (int i = 0, k = 1; i < m; ++i, k ^= 1)
-            for (int j = 0; j < n; ++j)
-                if (s1.charAt(i) == s2.charAt(j)) dp[k][j + 1] = 1 + dp[k ^ 1][j];
-                else dp[k][j + 1] = Math.max(dp[k ^ 1][j + 1], dp[k][j]);
-        return dp[m % 2][n];
-    }
-
     public static void main(String[] args){
+        String s1 = "ace";
+        String s2 = "abcde";
 
+        System.out.println(method(s1, s2));
     }
 }

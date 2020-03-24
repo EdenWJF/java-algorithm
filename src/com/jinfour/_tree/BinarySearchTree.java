@@ -1,4 +1,4 @@
-package com.jinfour.tree;
+package com.jinfour._tree;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -136,14 +136,24 @@ public class BinarySearchTree {
         if (root == null) return;
         LinkedList<Node> list = new LinkedList<>();
         list.add(root);
+        Node last = root;
+        Node nlast = root;
         for (;;) {
             if (list.isEmpty()) break;
             Node pop = list.pop();
-            if (pop.left != null)
-                list.add(pop.left);
-            if (pop.right != null)
-                list.add(pop.right);
             System.out.print(pop.data + " ");
+            if (pop.left != null) {
+                list.add(pop.left);
+                nlast = pop.left;
+            }
+            if (pop.right != null) {
+                list.add(pop.right);
+                nlast = pop.right;
+            }
+            if (last == pop) {
+                System.out.println();
+                last = nlast;
+            }
         }
     }
 
@@ -294,7 +304,7 @@ public class BinarySearchTree {
         System.out.println();
         travPre(ConstSamples.bstSample.root);
         System.out.println();
-//        levelOrder(ConstSamples.bstSample.root);
+        levelOrder(ConstSamples.bstSample.root);
 //        System.out.println();
         inOrder(ConstSamples.bstSample.root);
         System.out.println();

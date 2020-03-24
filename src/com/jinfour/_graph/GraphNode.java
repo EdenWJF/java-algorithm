@@ -1,4 +1,4 @@
-package com.jinfour.graph;
+package com.jinfour._graph;
 
 import java.util.ArrayList;
 import java.util.List;

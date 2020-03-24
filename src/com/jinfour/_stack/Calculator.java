@@ -1,8 +1,8 @@
-package com.jinfour.stackandqueue;
+package com.jinfour._stack;
 
 import java.util.Stack;
 
-public class Evaluate {
+public class Calculator {
 
     //基于运算符优先级，根据字符串计算值
     //S='3+(2*5)-1'
@@ -11,7 +11,7 @@ public class Evaluate {
     int evaluate(char[] source) {
 
         Stack s1 = new Stack();//盛放符号
-        Stack s2 = new Stack();//盛放数字
+        Stack<Integer> s2 = new Stack();//盛放数字
 
         for (int i = 0; i < source.length; i++) {
             if (isDigit(source[i])) {
@@ -31,9 +31,7 @@ public class Evaluate {
     }
 
     private boolean isDigit(char s) {
-        if (s >= '0' && s <= '9')
-            return true;
-        return false;
+        return s >= '0' && s <= '9';
     }
 
     public static void main(String[] args){

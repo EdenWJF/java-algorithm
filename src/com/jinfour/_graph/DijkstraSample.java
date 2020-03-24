@@ -1,4 +1,4 @@
-package com.jinfour.graph;
+package com.jinfour._graph;
 
 public class DijkstraSample {
 

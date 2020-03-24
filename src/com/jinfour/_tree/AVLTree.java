@@ -1,9 +1,4 @@
-package com.jinfour.tree;
-
-import com.jinfour.tree.BinarySearchTree;
-
-import java.util.HashMap;
-import java.util.TreeMap;
+package com.jinfour._tree;
 
 public class AVLTree extends BinarySearchTree {
 

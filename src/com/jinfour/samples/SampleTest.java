@@ -6,8 +6,6 @@ import org.junit.Test;
 
 public class SampleTest {
 
-
-
     @Test
     public void ts1() {
         Interview_02 i1 = Interview_02.getInstance();

@@ -1,4 +1,4 @@
-package com.jinfour.stackandqueue;
+package com.jinfour._stack;
 
 import java.util.Stack;
 

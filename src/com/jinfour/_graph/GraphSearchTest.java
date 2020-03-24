@@ -1,4 +1,4 @@
-package com.jinfour.graph;
+package com.jinfour._graph;
 
 import org.junit.Assert;
 import org.junit.Before;

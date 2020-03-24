@@ -1,17 +1,8 @@
-package com.jinfour.beautiful;
+package com.jinfour._linkedlist;
+
+import com.jinfour._linkedlist.ListNode;
 
 public class SortList {
-
-
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     //链表排序，时间复杂度O(nlogn)
     public ListNode sortList(ListNode head) {
@@ -41,7 +32,7 @@ public class SortList {
         ListNode l = new ListNode(0), p = l;
 
         while (l1 != null && l2 != null) {
-            if (l1.val < l2.val) {
+            if (l1.data < l2.data) {
                 p.next = l1;
                 l1 = l1.next;
             } else {
