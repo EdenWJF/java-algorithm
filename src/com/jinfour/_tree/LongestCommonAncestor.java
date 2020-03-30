@@ -3,7 +3,7 @@ package com.jinfour._tree;
 public class LongestCommonAncestor {
 
     //查找二叉树中两个节点的公共最近祖先
-    private class TreeNode {
+    private static class TreeNode {
         int data;
         TreeNode left;
         TreeNode right;
