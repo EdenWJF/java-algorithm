@@ -19,7 +19,7 @@ public class MirrorTree {
         root.left = node2; root.right = node3;
         node2.left = node4; node2.right = node5;
         node3.left = node6; node3.right = node7;
-        mirror1(root);
+        retry1(root);
         levelOrder(root);
     }
 
@@ -61,23 +61,54 @@ public class MirrorTree {
         if (root == null) return;
         LinkedList<BinarySearchTree.Node> list = new LinkedList<>();
         list.add(root);
+        BinarySearchTree.Node cur = root;
         BinarySearchTree.Node last = root;
-        BinarySearchTree.Node nlast = root;
-        for (;;) {
-            if (list.isEmpty()) break;
+        while(!list.isEmpty()) {
             BinarySearchTree.Node pop = list.pop();
             System.out.print(pop.data + " ");
             if (pop.left != null) {
-                list.add(pop.left);
-                nlast = pop.left;
+                list.offer(pop.left);
+                cur = pop.right;
             }
             if (pop.right != null) {
-                list.add(pop.right);
-                nlast = pop.right;
+                list.offer(pop.right);
+                cur = pop.right;
             }
             if (last == pop) {
                 System.out.println();
-                last = nlast;
+                last = cur;
+            }
+        }
+    }
+
+
+    public static void retry(BinarySearchTree.Node root) {
+        if (root == null) return;
+
+        BinarySearchTree.Node left = root.left;
+        root.left = root.right;
+        root.right = left;
+
+        retry(root.left);
+        retry(root.right);
+    }
+
+    public static void retry1(BinarySearchTree.Node root) {
+        if (root == null) return;
+        Stack<BinarySearchTree.Node> stack = new Stack<>();
+        stack.push(root);
+        BinarySearchTree.Node cur = null;
+        while(!stack.empty()) {
+            cur = stack.pop();
+            BinarySearchTree.Node left = cur.left;
+            BinarySearchTree.Node right = cur.right;
+            cur.left = right;
+            cur.right = left;
+            if (right != null) {
+                stack.push(cur.left);
+            }
+            if (left != null) {
+                stack.push(cur.right);
             }
         }
     }

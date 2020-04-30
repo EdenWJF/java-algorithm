@@ -10,7 +10,7 @@ public class FindMaxRight {
 
     public static void main(String[] args){
         int[] arr = new int[]{6,3,4,5,7,2,8,10};
-        int[] maxRight = findMaxRight(arr);
+        int[] maxRight = retry(arr);
         for (int i = 0; i < maxRight.length; i++) {
             System.out.print(maxRight[i] +" ");
         }
@@ -29,6 +29,24 @@ public class FindMaxRight {
         while (!stack.empty()) {
             Integer pop = stack.pop();
             arr[pop] = -1;
+        }
+        return arr;
+    }
+
+    public static int[] retry(int[] arr) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(0);
+
+        for (int i = 1; i < arr.length; i++) {
+            while(!stack.empty() && arr[stack.peek()] < arr[i]) {
+                arr[stack.peek()] = arr[i];
+                stack.pop();
+            }
+            stack.push(i);
+        }
+
+        while(!stack.empty()) {
+            arr[stack.pop()] = -1;
         }
         return arr;
     }

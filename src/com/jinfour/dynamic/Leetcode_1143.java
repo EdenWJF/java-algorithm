@@ -23,7 +23,7 @@ public class Leetcode_1143 {
     }
 
     public static void main(String[] args){
-        String s1 = "ace";
+        String s1 = "aae";
         String s2 = "abcde";
 
         System.out.println(method(s1, s2));

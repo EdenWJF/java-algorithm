@@ -1,5 +1,7 @@
 package com.jinfour._tree;
 
+import sun.reflect.generics.tree.Tree;
+
 public class LongestCommonAncestor {
 
     //查找二叉树中两个节点的公共最近祖先
@@ -24,4 +26,43 @@ public class LongestCommonAncestor {
         if (left != null && right != null) return current;
         return left == null ? right : left;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    TreeNode retry(TreeNode root, TreeNode p, TreeNode q) {
+
+        if (root == null) {
+            return null;
+        }
+
+        if (root == p || root == q) {
+            return root;
+        }
+
+        TreeNode left = retry(root.left, p, q);
+        TreeNode right = retry(root.right, p , q);
+
+        if (left != null && right != null) {
+            return root;
+        }
+        return left == null?right:left;
+
+    }
+
 }

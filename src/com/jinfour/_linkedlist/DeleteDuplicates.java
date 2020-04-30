@@ -21,4 +21,8 @@ public class DeleteDuplicates {
         }
         return dummy.next;
     }
+
+    ListNode retry(ListNode head) {
+        return null;
+    }
 }

@@ -36,4 +36,37 @@ public class FindPath {
         path.pop();
         return listAll;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public List<Stack<TreeNode>> retry(TreeNode current, int target, Stack<TreeNode> path, List<Stack<TreeNode>> listAll) {
+        if (current == null) {
+            return listAll;
+        }
+
+        int t = target - current.data;
+        path.push(current);
+        if (current.left == null && current.right == null && t == 0 ) {
+            listAll.add(path);
+        }
+        retry(current.left, t, path, listAll);
+        retry(current.right, t, path, listAll);
+        path.pop();
+        return listAll;
+    }
 }
