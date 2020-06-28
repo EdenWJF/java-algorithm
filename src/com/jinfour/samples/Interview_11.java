@@ -21,7 +21,43 @@ public class Interview_11 {
     }
 
     public static void main(String[] args){
-        int[] arr = new int[] {0,1,1,1};
+        int[] arr = new int[] {1,1,0,1};
         System.out.println(getMin(arr));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    static int retry(int[] arr) {
+        int low = 0, high = arr.length - 1;
+        int middle = (low + high)/2;
+        while(low < high) {
+            if (arr[low] < arr[middle]) {
+                low = middle + 1;
+            }else if (arr[low] > arr[middle]) {
+                high = middle - 1;
+            }
+            if (arr[high] > arr[middle]) {
+                high = middle - 1;
+            }else if (arr[high] < arr[middle]) {
+                low = middle + 1;
+            }
+        }
+        return arr[low];
     }
 }

@@ -1,25 +1,25 @@
 package com.jinfour._linkedlist;
 
 public class ListNode {
-    int data;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
-    public int getData() {
-        return data;
+    public int getVal() {
+        return val;
     }
 
-    public void setData(int data) {
-        this.data = data;
+    public void setVal(int val) {
+        this.val = val;
     }
 
     public ListNode(int e) {
-        this.data = e;
+        this.val = e;
     }
 
     @Override
     public String toString() {
         return "ListNode{" +
-                "data=" + data +
+                "data=" + val +
                 ", next=" + next +
                 '}';
     }
@@ -27,7 +27,7 @@ public class ListNode {
         ListNode t = this;
         String li = "";
         while (t != null) {
-            li = li + t.data + "-->";
+            li = li + t.val + "-->";
             t = t.next;
         }
         return li;

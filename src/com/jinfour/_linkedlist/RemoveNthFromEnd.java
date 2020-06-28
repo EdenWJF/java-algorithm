@@ -28,11 +28,11 @@ public class RemoveNthFromEnd {
         ListNode h3 = new ListNode(3);
         ListNode h4 = new ListNode(1);
         ListNode h5 = new ListNode(5);
-        h1.data = 2;
-        h2.data = 4;
-        h3.data = 3;
-        h4.data = 1;
-        h5.data = 5;
+        h1.val = 2;
+        h2.val = 4;
+        h3.val = 3;
+        h4.val = 1;
+        h5.val = 5;
 
         h1.next = h2;
         h2.next = h3;

@@ -51,7 +51,7 @@ public class MergeKLists {
         ListNode tmp = res;
         while(list1 != null || list2 != null) {
             if (list1 != null && list2 != null) {
-                if (list1.data > list2.data) {
+                if (list1.val > list2.val) {
                     tmp.next = list2;
                     list2 = list2.next;
                 }else {

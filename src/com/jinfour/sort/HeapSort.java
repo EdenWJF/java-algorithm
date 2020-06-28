@@ -4,51 +4,62 @@ import java.util.PriorityQueue;
 
 public class HeapSort {
 
-
-    public int[] heapSort(int[] array) {
-        buildMaxHeap(array, array.length);
-
-        for (int i = array.length - 1; i > 0; i--) {
-            swap(array, 0, i);
-            buildMaxHeap(array, i - 1);
+    public static int[] maxHeapify(int[] array, int size) {
+        // 从数组的尾部开始，直到第一个元素(角标为0)
+        for (int i = size - 1; i >= 0; i--) {
+            heapify(array, i, size);
         }
         return array;
     }
 
-    private int[] buildMaxHeap(int[] array, int len) {
-        for (int i = (len/2 - 1); i >= 0; i--) {
-            adjustHeap(array, len, i);
+    private static void heapify(int[] arr, int currNode, int size) {
+        if (currNode < size) {
+            int left = currNode * 2 + 1;
+            int right = currNode * 2 + 2;
+            int max = currNode;
+
+            if (left < size) {
+                //根节点和左子节点比较
+                if (arr[max] < arr[left]) {
+                    max = left;
+                }
+            }
+
+            if (right < size) {
+                //把左子树和根节点中较大者和右子节点比较
+                if (arr[max] < arr[right]) {
+                    max = right;
+                }
+            }
+            if (max != currNode) {
+                swap(arr, currNode, max);
+                heapify(arr, max, size);
+            }
         }
-        return array;
     }
 
-    private void adjustHeap(int[] array, int length, int head) {
-        int left = head * 2 + 1;
-        int right = head * 2 + 2;
-        int maxIndex = head;
-        if ( left < length && array[head] < array[maxIndex]) {
-            maxIndex = left;
-        }
-        if (right < length && array[head] < array[maxIndex]) {
-            maxIndex = right;
-        }
-        if (maxIndex != head) {
-            //交换位置
-
-            adjustHeap(array, length, maxIndex);
-        }
-    }
-
-
-
-    private void swap(int[] array, int i, int j) {
+    private static void swap(int[] array, int i, int j) {
         int tmp = array[i];
         array[i] = array[j];
         array[j] = tmp;
     }
 
+    public static void heapSort(int[] array) {
+        int size = array.length;
+        for (int i = 0; i < array.length; i++) {
+            maxHeapify(array, size);
+            swap(array, 0, size - 1);
+            size--;
+        }
+    }
+
     public static void main(String[] args){
-        PriorityQueue queue = new PriorityQueue();
+        int[] arr = new int[]{4,3,5,7,1,9};
+        heapSort(arr);
+        for (int i = 0; i<arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+
     }
 
 }

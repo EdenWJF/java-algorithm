@@ -19,11 +19,13 @@ public class LongestCommonAncestor {
         }
     }
 
-    TreeNode solution(TreeNode current, TreeNode p, TreeNode q) {
-        if (current == null || current.data == p.data || current.data == q.data) return current;
+    static TreeNode solution(TreeNode current, TreeNode p, TreeNode q) {
+        if (current == null || current.data == p.data || current.data == q.data)
+            return current;
         TreeNode left = solution(current.left, p, q);
         TreeNode right = solution(current.right, p, q);
-        if (left != null && right != null) return current;
+        if (left != null && right != null)
+            return current;
         return left == null ? right : left;
     }
 

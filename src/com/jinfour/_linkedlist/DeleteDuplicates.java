@@ -9,9 +9,9 @@ public class DeleteDuplicates {
         ListNode cur = dummy;
 
         while(cur.next != null && cur.next.next != null) {
-            if (cur.next.data == cur.next.next.data) {
+            if (cur.next.val == cur.next.next.val) {
                 ListNode tmp = cur.next;
-                while(tmp.next != null && tmp.data == tmp.next.data) {
+                while(tmp.next != null && tmp.val == tmp.next.val) {
                     tmp = tmp.next;
                 }
                 cur.next = tmp.next;
