@@ -20,6 +20,8 @@ public class DynamicSamples {
         System.out.println(fibonacci);
 
         System.out.println(getMinCounts(total, coins));
+
+        System.out.println(maxArr(new int[]{-2, 1, 2, 1, -1, 6, 2, -5, 6}));
     }
 
 
@@ -111,17 +113,13 @@ public class DynamicSamples {
 
     static int maxArr(int[] arr) {
         if (arr.length == 1) return arr[0];
-        int sum = arr[0];
         int[] dp = new int[arr.length];
         dp[0] = arr[0];
+        int max = dp[0];
         for (int i = 1; i < arr.length; i++) {
-            if (dp[0] + arr[i] > dp[0]) {
-                dp[i] = dp[0] + arr[i];
-            }else {
-
-            }
-
+            dp[i] = Math.max(max + arr[i], arr[i]);
+            max = Math.max(dp[i], max);
         }
-        return sum;
+        return max;
     }
 }
