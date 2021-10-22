@@ -15,6 +15,8 @@ public class Packet_0_1 {
         int W = 9;
 
         System.out.println(getAnswer2(W,N,w,n));
+
+        System.out.println(1 % 2);
     }
 
     /**
@@ -50,32 +52,25 @@ public class Packet_0_1 {
     }
 
 
+    // 完全背包问题
     static int getAnswer2(int W, int N, int[] w, int[] n) {
-        int[][] dp = new int[W+1][N+1]; // 在某重量、前n个物品下，最大价值
-
-        for (int i = 0; i < W+1; i++) { // 初始化，物品数量为0，最大价值也是0
+        int[][] dp = new int[2][W+1]; // 在某重量、前n个物品下，最大价值
+        for (int i = 0; i < 2; i++) { // 初始化，重量控制为0，最大价值也是0
             dp[i][0] = 0;
         }
-        for (int i = 0; i < N+1; i++) { // 初始化，重量控制为0，最大价值亦为0
+        for (int i = 0; i < W + 1; i++) { // 初始化，物品数量为0，最大价值亦为0
             dp[0][i] = 0;
         }
-
         for (int i = 1; i < N + 1; i++) {
             for (int j = 1; j < W + 1; j++) {
-                if (w[i-1] > j) {
-                    dp[j][i] = dp[j][i-1];
-                }else {
-                    int count = j / w[i-1];
-                    int max = dp[j][i-1];
-                    for (int k = 1; k < count+1; k++) {
-                        int rest = j - w[i-1] * k;
-                        max = Math.max(max, dp[rest][i-1] + n[i-1] * k);
-                    }
-                    dp[j][i] = max;
+                int curr = i % 2;
+                int last = (i-1) % 2;
+                dp[curr][j] = dp[last][j];
+                if (w[i-1] <= j) {
+                    dp[curr][j] = Math.max(dp[curr][j - w[i-1]] + n[i-1], dp[curr][j]);
                 }
             }
         }
-        return dp[W][N];
-
+        return dp[N%2][W];
     }
 }
