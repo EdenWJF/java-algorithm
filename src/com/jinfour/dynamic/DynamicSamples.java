@@ -117,7 +117,7 @@ public class DynamicSamples {
         dp[0] = arr[0];
         int max = dp[0];
         for (int i = 1; i < arr.length; i++) {
-            dp[i] = Math.max(max + arr[i], arr[i]);
+            dp[i] = Math.max(dp[i-1] + arr[i], arr[i]);
             max = Math.max(dp[i], max);
         }
         return max;
