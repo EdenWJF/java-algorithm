@@ -26,7 +26,7 @@ public class SubArray {
 
         for (int j = 1; j < n; j++) {
             for (int i = 0; i < j; i++) {
-                dp[i][j] = (s.charAt(i) == s.charAt(j)) && (j-i < 3 || dp[i+1][j-1]);
+                dp[i][j] = (s.charAt(i) == s.charAt(j)) && (j - i < 3 || dp[i + 1][j - 1]);
                 if (dp[i][j]) {
                     sum++;
                 }

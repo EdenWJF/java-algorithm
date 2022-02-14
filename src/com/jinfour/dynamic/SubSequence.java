@@ -47,4 +47,27 @@ public class SubSequence {
         }
         return dp[n][m];
     }
+
+    static int getLongest(String text) {
+        int len = text.length();
+        int[][] dp = new int[len][len];
+        for (int i = 0; i < len; i++) {
+            dp[i][i] = 1;
+        }
+
+        for (int j = 1; j < len; j++) {
+            for (int i = 0; i < j; i++) {
+                if (j - i < 2) {
+                    if (text.charAt(i) == text.charAt(j)) dp[i][j] = 2;
+                }else {
+                    if (text.charAt(i) == text.charAt(j)) {
+                        dp[i][j] = dp[i+1][j-1] + 2;
+                    }else {
+                        dp[i][j] = Math.max(dp[i+1][j], dp[i][j-1]);
+                    }
+                }
+            }
+        }
+        return dp[0][len-1];
+    }
 }
