@@ -14,6 +14,8 @@ public class Test {
         String s = "abcabcbb";
 //        System.out.println(lengthOfLongestSubstring(s));
         Test t = new Test();
+        System.out.println(System.getProperty("user.home"));
+        System.out.println(System.getProperty("user.dir"));
     }
 
     public class TreeNode {
