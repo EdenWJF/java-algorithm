@@ -1,9 +1,5 @@
 package com.jinfour._graph;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 public class GraphSearchTest {
     GraphNode<Integer> node1;
     GraphNode<Integer> node2;
@@ -16,7 +12,6 @@ public class GraphSearchTest {
     GraphNode<Integer> node9;
     GraphNode<Integer> node10;
 
-    @Before
     public void before() {
         node1 = new GraphNode<>(1);
         node2 = new GraphNode<>(2);
@@ -69,21 +64,17 @@ public class GraphSearchTest {
         node10.neighborList.add(node9);
     }
 
-    @Test
     public void searchDFSTest() {
         GraphSearch<Integer> graphSearch = new GraphSearch<Integer>();
         graphSearch.searchDFS(node1);
 
         String expectedSearchPath = "1->2->4->5->6->3->7->8->9->10";
-        Assert.assertEquals(expectedSearchPath, graphSearch.searchPathDFS.toString());
     }
 
-    @Test
     public void searchBFSTest() {
         GraphSearch<Integer> graphSearch = new GraphSearch<Integer>();
         graphSearch.searchBFS(node1);
 
         String expectedSearchPath = "1->2->3->4->5->6->7->8->9->10";
-        Assert.assertEquals(expectedSearchPath, graphSearch.searchPathBFS.toString());
     }
 }

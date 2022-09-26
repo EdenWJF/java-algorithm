@@ -1,9 +1,5 @@
 package com.jinfour.samples;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 public class SampleTest {
 
 
@@ -14,7 +10,6 @@ public class SampleTest {
         System.out.println(i);
     }
 
-    @Test
     public void ts1() {
         Interview_02 i1 = Interview_02.getInstance();
 
