@@ -74,9 +74,8 @@ public class Regular_expression_matching {
         int col = p.length() + 1;
         boolean[][] dp = new boolean[row][col];
         dp[0][0] = true;
-        dp[0][1] = p.charAt(0) == '*';
 
-        for(int i = 2; i < col; i++) {
+        for(int i = 1; i < col; i++) {
             char c = p.charAt(i-1);
             if((c >= 'a' && c <= 'z') || c == '.') {
                 dp[0][i] = false;
