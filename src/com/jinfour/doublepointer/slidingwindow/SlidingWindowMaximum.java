@@ -1,4 +1,4 @@
-package com.jinfour.leetcode;
+package com.jinfour.doublepointer.slidingwindow;
 
 import java.util.LinkedList;
 

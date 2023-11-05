@@ -1,6 +1,8 @@
 package com.jinfour;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,6 +18,14 @@ public class Test {
         Test t = new Test();
         System.out.println(System.getProperty("user.home"));
         System.out.println(System.getProperty("user.dir"));
+        Calendar initdate = Calendar.getInstance();
+        initdate.add(Calendar.WEEK_OF_YEAR, -1);
+        Calendar enddate = Calendar.getInstance();
+        enddate.add(Calendar.MINUTE, 5);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String where = "booked = 0 and bookdate > '" + sdf.format(initdate.getTime()) + "'  and bookdate < '" + sdf.format(enddate.getTime()) + "'";
+
+        System.out.println(where);
     }
 
     public class TreeNode {
